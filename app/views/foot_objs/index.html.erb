@@ -1,0 +1,31 @@
+<h1>Listing foot_objs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Enable</th>
+      <th>Body</th>
+      <th>Picture</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @foot_objs.each do |foot_obj| %>
+      <tr>
+        <td><%= foot_obj.name %></td>
+        <td><%= foot_obj.enable %></td>
+        <td><%= foot_obj.body %></td>
+        <td><%= foot_obj.picture %></td>
+        <td><%= link_to 'Show', foot_obj %></td>
+        <td><%= link_to 'Edit', edit_foot_obj_path(foot_obj) %></td>
+        <td><%= link_to 'Destroy', foot_obj, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Foot obj', new_foot_obj_path %>

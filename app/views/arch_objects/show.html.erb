@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @arch_object.name %>
+</p>
+
+<p>
+  <strong>Avatar:</strong>
+  <%= @arch_object.avatar %>
+</p>
+
+<p>
+  <strong>Foundation:</strong>
+  <%= @arch_object.foundation %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @arch_object.status %>
+</p>
+
+<%= link_to 'Edit', edit_arch_object_path(@arch_object) %> |
+<%= link_to 'Back', arch_objects_path %>

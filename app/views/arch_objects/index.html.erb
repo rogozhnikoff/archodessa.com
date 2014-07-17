@@ -1,0 +1,31 @@
+<h1>Listing arch_objects</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Avatar</th>
+      <th>Foundation</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @arch_objects.each do |arch_object| %>
+      <tr>
+        <td><%= arch_object.name %></td>
+        <td><%= arch_object.avatar %></td>
+        <td><%= arch_object.foundation %></td>
+        <td><%= arch_object.status %></td>
+        <td><%= link_to 'Show', arch_object %></td>
+        <td><%= link_to 'Edit', edit_arch_object_path(arch_object) %></td>
+        <td><%= link_to 'Destroy', arch_object, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Arch object', new_arch_object_path %>

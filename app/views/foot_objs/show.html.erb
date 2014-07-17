@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @foot_obj.name %>
+</p>
+
+<p>
+  <strong>Enable:</strong>
+  <%= @foot_obj.enable %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @foot_obj.body %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= @foot_obj.picture %>
+</p>
+
+<%= link_to 'Edit', edit_foot_obj_path(@foot_obj) %> |
+<%= link_to 'Back', foot_objs_path %>
