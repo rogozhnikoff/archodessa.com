@@ -27,7 +27,7 @@ class ArchObjectsController < ApplicationController
     @arch_object = ArchObject.new(arch_object_params)
     respond_to do |format|
       if @arch_object.save
-        format.html { redirect_to new_address_url, notice: 'Arch object was successfully created.' }
+        format.html { redirect_to arch_objects_url @arch_object.id, notice: 'Arch object was successfully created.' }
         format.json { render :show, status: :created, location: @arch_object }
       else
         format.html { render :new }
