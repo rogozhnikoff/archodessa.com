@@ -40,3 +40,4 @@ gem 'tzinfo-data'
 gem 'devise'
 
 gem 'activeadmin', github: 'gregbell/active_admin'
+gem "haml-rails"
