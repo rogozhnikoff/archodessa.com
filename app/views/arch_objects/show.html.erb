@@ -1,5 +1,4 @@
 <p id="notice"><%= notice %></p>
-<%= debug @arch_object.architects %>
 <p>
   <strong>Name:</strong>
   <%= @arch_object.name %>
@@ -27,7 +26,19 @@
 <p>-----------------</p>
 <p>Архитекторы</p>
 <% @arch_object.architects.each do |architect| %>
-    <%=link_to architect.get_name(architect), architect%>
+    <%=link_to architect.get_name, architect%>
+    <br>
+    <%end%>
+<p>-----------------</p>
+<p>Стили</p>
+<% @arch_object.styles.each do |style| %>
+    <%=style.name%>
+    <br>
+    <%end%>
+<p>-----------------</p>
+<p>Тип</p>
+<% @arch_object.types.each do |type| %>
+    <%=type.name%>
     <br>
     <%end%>
 <p>-----------------</p>

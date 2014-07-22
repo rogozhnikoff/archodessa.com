@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140722101619) do
+ActiveRecord::Schema.define(version: 20140722150828) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -74,6 +74,20 @@ ActiveRecord::Schema.define(version: 20140722101619) do
     t.datetime "updated_at"
   end
 
+  create_table "arch_objects_styles", force: true do |t|
+    t.integer  "arch_object_id"
+    t.integer  "style_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "arch_objects_types", force: true do |t|
+    t.integer  "arch_object_id"
+    t.integer  "type_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "architects", force: true do |t|
     t.string   "name"
     t.string   "surname"
@@ -125,9 +139,22 @@ ActiveRecord::Schema.define(version: 20140722101619) do
     t.datetime "updated_at"
   end
 
+  create_table "styles", force: true do |t|
+    t.string   "name"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "thanks", force: true do |t|
     t.string   "name"
     t.text     "why"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "types", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

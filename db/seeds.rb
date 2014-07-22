@@ -9,6 +9,29 @@ ArchObject.delete_all
 Architect.delete_all
 Article.delete_all
 ArchObjectsArchitect.delete_all
+Style.delete_all
+Type.delete_all
+
+ArchObject::STYLES.each do |style|
+  Style.create!(
+      name: style,
+      body: ''
+  )
+end
+ArchObject::OBJECT_TYPES.each do |type|
+  Type.create!(
+      name: type
+  )
+end
+styles =[]
+styles << Style.find_by(name: 'неоклассицизм')
+styles << Style.find_by(name: 'модерн')
+styles << Style.find_by(name: 'ретроспективный модерн')
+types = []
+types << Type.find_by(name: 'библиотека')
+types << Type.find_by(name: 'общественное сооружение')
+
+
 o = ArchObject.create!(name: 'Одесская национальная научная библиотека им. М. Горького',
                 avatar:   'pastera_13/avatar.jpg',
                 foundation: Time.new(1990, 1, 2),
@@ -16,6 +39,8 @@ o = ArchObject.create!(name: 'Одесская национальная науч
                 district: 'Приморский',
                 street: 'Пастера',
                 num: '13',
+                styles: styles,
+                types: types,
                 id: 1)
 Article.create!(
                 title: 'Основна',
