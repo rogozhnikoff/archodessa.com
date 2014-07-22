@@ -19,13 +19,9 @@
         <td><%= arch_object.foundation %></td>
         <td><%= arch_object.status %></td>
         <td><%= link_to 'Show', arch_object %></td>
-        <td><%= link_to 'Edit', edit_arch_object_path(arch_object) %></td>
-        <td><%= link_to 'Destroy', arch_object, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Arch object', new_arch_object_path %>
+<%= link_to 'Архитекторы', architects_url%>

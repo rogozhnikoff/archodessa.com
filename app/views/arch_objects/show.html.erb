@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<%= debug @arch_object.architects %>
 <p>
   <strong>Name:</strong>
   <%= @arch_object.name %>
@@ -7,7 +7,7 @@
 
 <p>
   <strong>Avatar:</strong>
-  <%= @arch_object.avatar %>
+  <%= image_tag @arch_object.avatar %>
 </p>
 
 <p>
@@ -19,6 +19,18 @@
   <strong>Status:</strong>
   <%= @arch_object.status %>
 </p>
-
+<p>Статьи</p>
+<% @arch_object.articles.each do |article| %>
+    <%=link_to article.title, article%>
+    <br>
+    <%end%>
+<p>-----------------</p>
+<p>Архитекторы</p>
+<% @arch_object.architects.each do |architect| %>
+    <%=link_to architect.get_name(architect), architect%>
+    <br>
+    <%end%>
+<p>-----------------</p>
 <%= link_to 'Edit', edit_arch_object_path(@arch_object) %> |
 <%= link_to 'Back', arch_objects_path %>
+<%= link_to 'new article', new_article_url(:arch_object_id => @arch_object.id)%>

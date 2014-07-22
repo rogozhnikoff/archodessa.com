@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140719130658) do
+ActiveRecord::Schema.define(version: 20140722101619) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -67,6 +67,13 @@ ActiveRecord::Schema.define(version: 20140719130658) do
     t.string   "num"
   end
 
+  create_table "arch_objects_architects", force: true do |t|
+    t.integer  "arch_object_id"
+    t.integer  "architect_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "architects", force: true do |t|
     t.string   "name"
     t.string   "surname"
@@ -84,6 +91,7 @@ ActiveRecord::Schema.define(version: 20140719130658) do
     t.string   "avatar"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "arch_object_id"
   end
 
   create_table "foot_objs", force: true do |t|
