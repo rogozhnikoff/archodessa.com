@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /articles
   # GET /articles.json
@@ -25,7 +26,8 @@ class ArticlesController < ApplicationController
   # POST /articles
   # POST /articles.json
   def create
-    @article = Article.new(article_params)
+    @user = current_user
+    @article = @user.articles.new(article_params)
 
     respond_to do |format|
       if @article.save

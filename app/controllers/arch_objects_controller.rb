@@ -1,10 +1,9 @@
 class ArchObjectsController < ApplicationController
-  before_action :set_arch_object, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /arch_objects
   # GET /arch_objects.json
   def index
-    @arch_objects = ArchObject.all
   end
 
   # GET /arch_objects/1
@@ -14,7 +13,7 @@ class ArchObjectsController < ApplicationController
 
   # GET /arch_objects/new
   def new
-    @arch_object = ArchObject.new
+
   end
 
   # GET /arch_objects/1/edit
@@ -24,7 +23,8 @@ class ArchObjectsController < ApplicationController
   # POST /arch_objects
   # POST /arch_objects.json
   def create
-    @arch_object = ArchObject.new(arch_object_params)
+    @user = current_user
+    @arch_object = @user.arch_objects.new(arch_object_params)
     respond_to do |format|
       if @arch_object.save
         format.html { redirect_to arch_objects_url @arch_object.id, notice: 'Arch object was successfully created.' }
@@ -68,6 +68,6 @@ class ArchObjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def arch_object_params
-      params.require(:arch_object).permit(:name, :avatar, :foundation, :status)
+      params.require(:arch_object).permit(:name, :avatar, :foundation, :status, :user_id)
     end
 end

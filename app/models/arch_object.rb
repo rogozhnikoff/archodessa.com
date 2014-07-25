@@ -6,6 +6,7 @@ class ArchObject < ActiveRecord::Base
   has_many :architects, through: :arch_objects_architects
   has_many :styles, through: :arch_objects_styles
   has_many :types, through: :arch_objects_types
+  belongs_to :user
 
   DISTRICTS = %w(Суворовский Малиновский Молдаванка Киевский Приморский)
 # Не забути видалити STYLES -  сміття

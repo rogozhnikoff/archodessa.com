@@ -1,5 +1,6 @@
 class ArchitectsController < ApplicationController
   before_action :set_architect, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /architects
   # GET /architects.json

@@ -1,0 +1,7 @@
+<% if signed_in? %>
+Ви вошли как <%=current_user.email %>
+        | <%= link_to "Admin", admin_root_path%>
+    <%= link_to 'Выйти', destroy_user_session_path, method: :delete %>
+<%else%>
+<%= link_to 'Вход', new_user_session_path %>
+<%end%>
