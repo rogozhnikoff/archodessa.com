@@ -4,4 +4,7 @@ class Article < ActiveRecord::Base
   has_many :foot_objs
   has_many :resources
   has_many :thanks
+
+  scope :moderate, -> { where(:status => 'На модерации') }
+  scope :active, -> { where(:status => 'Активная') }
 end

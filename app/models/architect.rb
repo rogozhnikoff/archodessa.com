@@ -6,4 +6,7 @@ class Architect < ActiveRecord::Base
   def get_name
     "#{self.surname} #{self.name[0]}. #{self.familyname[0]}."
   end
+  def get_full_name
+    "#{self.surname} #{self.name} #{self.familyname}"
+  end
 end

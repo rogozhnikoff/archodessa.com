@@ -71,6 +71,6 @@ class ArchitectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def architect_params
-      params.require(:architect).permit(:name, :surname, :familyname, :avatar)
+      params.require(:architect).permit(:name, :surname, :familyname, :avatar, :user_id)
     end
 end
