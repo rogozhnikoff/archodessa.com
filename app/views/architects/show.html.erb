@@ -1,5 +1,4 @@
 <p id="notice"><%= notice %></p>
-<%= debug @architect %>
 
 <p>
   <strong>Name:</strong>
@@ -18,7 +17,7 @@
 
 <p>
   <strong>Avatar:</strong>
-  <%= image_tag @architect.avatar %>
+  <%= image_tag @architect.avatar.url(:medium) %>
 </p>
 
 <%= link_to 'Edit', edit_architect_path(@architect) %> |

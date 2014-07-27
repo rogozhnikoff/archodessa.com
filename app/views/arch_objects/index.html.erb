@@ -15,7 +15,7 @@
     <% @arch_objects.each do |arch_object| %>
       <tr>
         <td><%= arch_object.name %></td>
-        <td><%= arch_object.avatar %></td>
+        <td><%= image_tag arch_object.avatar.url(:thumb) %></td>
         <td><%= arch_object.foundation %></td>
         <td><%= arch_object.status %></td>
         <td><%= link_to 'Show', arch_object %></td>

@@ -1,4 +1,4 @@
-<%= form_for(@arch_object) do |f| %>
+<%= form_for @arch_object, :url => arch_objects_path, :html => { :multipart => true } do |f| %>
   <% if @arch_object.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@arch_object.errors.count, "error") %> prohibited this arch_object from being saved:</h2>
@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :avatar %><br>
-    <%= f.text_field :avatar %>
+    <%= f.file_field :avatar %>
   </div>
   <div class="field">
     <%= f.label :foundation %><br>

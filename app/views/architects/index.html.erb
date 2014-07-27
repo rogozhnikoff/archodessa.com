@@ -17,7 +17,7 @@
         <td><%= architect.name %></td>
         <td><%= architect.surname %></td>
         <td><%= architect.familyname %></td>
-        <td><%= architect.avatar %></td>
+        <td><%= image_tag architect.avatar.url(:thumb) %></td>
         <td><%= link_to 'Show', architect %></td>
         <td><%= link_to 'Edit', edit_architect_path(architect) %></td>
         <td><%= link_to 'Destroy', architect, method: :delete, data: { confirm: 'Are you sure?' } %></td>

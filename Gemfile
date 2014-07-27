@@ -42,3 +42,4 @@ gem 'devise'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem "haml-rails"
 gem 'cancan'
+gem "paperclip", "~> 3.5.3"

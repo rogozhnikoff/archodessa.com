@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/gregbell/active_admin.git
-  revision: 27360996837146ebbbf3b3597049b1586542fbeb
+  revision: a8ae008ec9632110bf33443ce7090dfef9cca480
   specs:
     activeadmin (1.0.0.pre)
       arbre (~> 1.0)
@@ -53,6 +53,10 @@ GEM
       thor
     builder (3.2.2)
     cancan (1.6.10)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.4)
+      climate_control (>= 0.0.3, < 1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -104,6 +108,11 @@ GEM
     minitest (5.4.0)
     multi_json (1.10.1)
     orm_adapter (0.5.0)
+    paperclip (3.5.4)
+      activemodel (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (~> 0.5.3)
+      mime-types
     polyamorous (1.0.0)
       activerecord (>= 3.0)
     polyglot (0.3.5)
@@ -184,6 +193,7 @@ DEPENDENCIES
   haml-rails
   jbuilder (~> 2.0)
   jquery-rails
+  paperclip (~> 3.5.3)
   rails (= 4.1.4)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)

@@ -1,5 +1,4 @@
 <p id="notice"><%= notice %></p>
-<%= debug @arch_object.user %>
 <p>
   <strong>Name:</strong>
   <%= @arch_object.name %>
@@ -7,7 +6,7 @@
 
 <p>
   <strong>Avatar:</strong>
-  <%= image_tag @arch_object.avatar %>
+  <%= image_tag @arch_object.avatar.url(:medium) %>
 </p>
 
 <p>

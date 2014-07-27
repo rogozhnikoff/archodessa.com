@@ -33,7 +33,7 @@ types << Type.find_by(name: 'общественное сооружение')
 
 
 o = ArchObject.create!(name: 'Одесская национальная научная библиотека им. М. Горького',
-                avatar:   'pastera_13/avatar.jpg',
+            #    avatar:   'pastera_13/avatar.jpg',
                 foundation: Time.new(1990, 1, 2),
                 status: 'Памятник архитектуры и истории национального значения',
                 district: 'Приморский',
@@ -163,14 +163,14 @@ a1 = Architect.create!(
     name: 'Фёдор',
     surname: 'Нестурх',
     familyname: 'Павлович',
-    avatar: '',
+  #  avatar: '',
     arch_objects: [o]
 )
 a2 = Architect.create!(
     name: 'Александр',
     surname: 'Бернардацци',
     familyname: 'Осипович',
-    avatar: 'architects/Bernardazzi.jpg',
+  #  avatar: 'architects/Bernardazzi.jpg',
     arch_objects: [o]
 )
 

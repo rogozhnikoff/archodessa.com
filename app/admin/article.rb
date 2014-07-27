@@ -21,6 +21,24 @@ ActiveAdmin.register Article do
 
     actions
   end
+  form do |f|
+    f.inputs "Контент" do
+      f.input :title
+      f.input :body
+    end
+    f.inputs "Выбери объект для которого статья" do
+      f.input :arch_object
+    end
+    f.actions
+  end
+
+  controller do
+    def create
+      super
+      @article.user = current_user
+      @article.save
+    end
+  end
 
   # See permitted parameters documentation:
   # https://github.com/gregbell/active_admin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
